@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Guías PSP0</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/tabla.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/styleTables.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">
+                <img src="img/GEPO.png" alt="" width="100px" height="60px">
+            </a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="index.html">Proyectos</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        
+        <!--MENU-->
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading "></div>
+                            <a class="nav-link btnhome" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <strong>MENÚ</strong>
+                            </a>
+                            <div class="sb-sidenav-menu-heading">GUÍA DEL PROCESO PSP0</div>
+                            <a class="nav-link" href="#tabla1">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                PROCESO PSP0
+                            </a>
+                            <a class="nav-link" href="#tabla2">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                DE PLANEACIÓN
+                            </a>
+                            <a class="nav-link" href="#tabla3">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                DE DESARROLLO
+                            </a>
+                            <a class="nav-link" href="#tabla4">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                POSTMORTEM
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sb-sidenav-footer">
+                        <img src="assets/img/user.png" width="40px" height="40px" alt="" style="float: left;">
+                        <div class="small" style="float: left;">Usuario: </div>
+                        <a href="login.html"></a>
+                        <a href="#cerrarSesión" class="edit" data-toggle="modal">
+                            <img src="assets/img/cerrar.png" width="30px" height="30px" alt="" style="float: right;">
+                        
+                        </a>
+                    </a>
+                    </div>
+                </nav>
+            </div>
+            <div id="cerrarSesión" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form>
+                            <div class="modal-header">						
+                                <h4 class="modal-title">Cerrar sesión</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">					
+                                <p>¿Estás seguro de cerrar la sesión?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                <a href="login.html" type="submit" class="btn btn-danger"> Cerrar
+                            </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="layoutSidenav_content">
+                <main>
+                        <div class="container">
+                            <div class="table-responsive">
+                                <div class="table-wrapper">
+                                    
+                                    <div class="table-title">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h2><b>GUÍA DEL PROCESO PSP0</b></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-striped table-hover" id="#tabla1">
+                                        <thead>
+                                            <tr>
+                                                <th>Número de Fase</th>
+                                                <th>GUÍARTE EN EL DESARROLLO DE PROGRAMAS POR MÓDULOS</th>
+                                                <th>Propósito</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>			
+                                            <tr>
+                                                
+                                                <td></td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Descripción del problema.</li>
+                                                    <li>Forma del Resumen del Plan del Proyecto.</li>
+                                                    <li>Bitácora de Registro de Tiempos y Bitácora de Registro
+                                                        de Defectos.</li>
+                                                    <li>Estándar de Tipos de Defectos.</li>
+                                                    <li>Reloj de Paro (opcional).</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Criterio deEntrada</td>                               
+                                            </tr> 
+                                            <tr>
+                                                
+                                                <td>1</td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Produce u obtiene la especificación de requisitos.</li>
+                                                    <li>Estima el tiempo de desarrollo requerido.</li>
+                                                    <li>Introduce los datos del plan en la forma de resumen del
+                                                        plan del proyecto.</li>
+                                                    <li>Completa el registro de tiempos en la bitácora de
+                                                        tiempos.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Planeación</td>                               
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>2</td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Diseña el programa.</li>
+                                                    <li>Implementa el diseño.</li>
+                                                    <li>Compila el programa, repara y registra los defectos
+                                                        encontrados.</li>
+                                                    <li>Completa la bitácora de registro de tiempos..</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Desarrollo</td>                               
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>3</td>
+                                                <td>
+                                                    Completa la forma de resumen del plan del proyecto con
+                                                    los datos actuales de tiempo, defectos y tamaño.    
+                                                </td>  
+                                                <td>Postmortem</td>                               
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td></td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Un programa totalmente probado.</li>
+                                                    <li>La forma del resumen del plan del proyecto completada
+                                                        con los datos actuales de tiempo, defectos y tamaño.</li>
+                                                    <li>Bitácora de Registro de Tiempos y Bitácora de Registro
+                                                        de Defectos.</li>
+                                                    <li>Las bitácoras del registro de tiempos y de defectos
+                                                        completadas.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Criterio de salida</td>                               
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>   
+                        </div>
+                        
+                        <div class="container">
+                            <div class="table-responsive">
+                                <div class="table-wrapper">
+                                    
+                                    <div class="table-title">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h2><b>GUÍA PSP0 DE PLANEACIÓN</b></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-striped table-hover" id="tabla2">
+                                        <thead>
+                                            <tr>
+                                                <th>Número de Fase</th>
+                                                <th>GUÍARTE EN EL PROCESO DE PLANEACIÓN DEL PSP0</th>
+                                                <th>Propósito</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>			
+                                            <tr>
+                                                
+                                                <td></td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Descripción del problema.</li>
+                                                    <li>Forma del Resumen del Plan del Proyecto.</li>
+                                                    <li>Bitácora de Registro de Tiempos.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Criterio deEntrada</td>                               
+                                            </tr> 
+                                            <tr>
+                                                
+                                                <td>1</td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Produce u obtiene la especificación de requisitos
+                                                        del programa.</li>
+                                                    <li>Asegúrate que la especificación de requisitos esté
+                                                        clara y no sea ambigua.</li>
+                                                    <li>Resuelve cualquier duda.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Requerimientos del programa</td>                               
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>2</td>
+                                                <td>
+                                                    Haz tu mejor estimación del tiempo requerido para desarrollar este programa.
+                                                </td>  
+                                                <td>Postmortem</td>                               
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td></td>
+                                                <td>
+                                                    <ul>
+                                                    <li>La documentación de la especificación de requerimientos.</li>
+                                                    <li>La forma del resumen del plan del proyecto
+                                                        completada con el dato estimado del tiempo de
+                                                        desarrollo.</li>
+                                                    <li>La bitácora de registro de tiempos completada.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Criterio de salida</td>                               
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>   
+                        </div>
+
+                        <div class="container">
+                            <div class="table-responsive">
+                                <div class="table-wrapper">
+                                    
+                                    <div class="table-title">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h2><b>GUÍA DE PSP0 DESARROLLO</b></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-striped table-hover" id="tabla3">
+                                        <thead>
+                                            <tr>
+                                                <th>Número de Fase</th>
+                                                <th>GUÍARTE EN EL PROCESO PSP0 DE
+                                                    DESARROLLO DE PEQUEÑOS PROGRAMAS</th>
+                                                <th>Propósito</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>			
+                                            <tr>
+                                                
+                                                <td></td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Especificación de requerimientos.</li>
+                                                    <li>La Forma del Resumen del Plan del Proyecto con el
+                                                        tiempo de desarrollo planeado.</li>
+                                                    <li>Las Bitácoras de Registro de Tiempos y de
+                                                        defectos.</li>
+                                                    <li>El estándar de tipos de defectos.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Criterio deEntrada</td>                               
+                                            </tr> 
+                                            <tr>
+                                                
+                                                <td>1</td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Revisa los requerimientos y produce un diseño que
+                                                        los conforme.</li>
+                                                    <li>Registra el tiempo tomado en esta etapa en la
+                                                        bitácora de tiempos.</li>
+                                                    </ul>
+                                                </td>  
+                                                <td>Diseño</td>                               
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>2</td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Implementa el diseño.</li>
+                                                        <li>Registra en la bitácora de defectos cualquier
+                                                            defecto de especificación de requerimientos o de
+                                                            diseño encontrado.</li>
+                                                            <li>Registra el tiempo tomado por esta etapa en la
+                                                                bitácora de tiempos.</li>
+                                                        </ul>
+                                                </td>  
+                                                <td>Codificación</td>                               
+                                            </tr>
+                                            <tr> 
+                                                <td>3</td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Compila el programa hasta que esté libre de
+                                                        errores.</li>
+                                                    <li>Repara todos los defectos encontrados.</li>
+                                                    <li>Registra los defectos en la bitácora de defectos.</li>
+                                                    <li>Registra el tiempo tomado por esta etapa en la
+                                                        bitácora de tiempos.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Compilación</td>                               
+                                            </tr>
+                                            <tr> 
+                                                <td>4</td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Prueba el programa hasta que todas las pruebas
+                                                        ejecuten sin error.</li>
+                                                    <li>Repara todos los defectos encontrados.</li>
+                                                    <li>Registra los defectos en la bitácora de defectos.</li>
+                                                    <li>Registra el tiempo tomado por esta etapa en la
+                                                        bitácora de tiempos.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Pruebas</td>                               
+                                            </tr>
+                                            <tr> 
+                                                <td></td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Un Programa totalmente probado.</li>
+                                                    <li>Las bitácoras de registro de tiempos y de defectos
+                                                        completadas.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Criterio de salida</td>                               
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>   
+                        </div>
+
+
+                        <div class="container">
+                            <div class="table-responsive">
+                                <div class="table-wrapper">
+                                    
+                                    <div class="table-title">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h2><b>GUÍA PSP0 DE POSTMORTEM</b></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-striped table-hover" id="tabla4">
+                                        <thead>
+                                            <tr>
+                                                <th>Número de Fase</th>
+                                                <th>GUÍARTE EN EL PROCESO PSP0 DE
+                                                    DESARROLLO DE PEQUEÑOS
+                                                    PROGRAMAS</th>
+                                                <th>Propósito</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>			
+                                            <tr>
+                                                
+                                                <td></td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Descripción del problema y la especificación de
+                                                        requerimientos.</li>
+                                                    <li>La Forma del Resumen del Plan del Proyecto
+                                                        con el tiempo de desarrollo planeado.</li>
+                                                    <li>La bitácora de Registro de Tiempos completada.</li>
+                                                    <li>La bitácora de Registro de Defectos completada.</li>
+                                                    <li>Un programa probado.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Criterio deEntrada</td>                               
+                                            </tr> 
+                                            <tr>
+                                                
+                                                <td>1</td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Determina desde la bitácora de Registro de
+                                                        Defectos, el número de defectos introducidos en
+                                                        cada fase del PSP0.</li>
+                                                    <li>Captura este número en la forma de Resumen del
+                                                        Plan del Proyecto en la columna de Defectos
+                                                        Introducidos-Actuales.</li>
+                                                   </ul
+                                                ></td>  
+                                                <td>Defectos Introducidos</td>                               
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>2</td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Determina desde la bitácora de Registro de
+                                                        Defectos, el número de defectos removidos en
+                                                        cada fase del PSP0.</li>
+                                                    <li>Captura este número en la forma de Resumen del
+                                                        Plan del Proyecto en la columna de Defectos
+                                                        Removidos-Actuales.</li>
+                                                   </ul
+                                                ></td>  
+                                                <td>Defectos Removidos</td>                               
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>3</td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Revisa la Bitácora de Registro de Tiempos esté
+                                                        completada.</li>
+                                                    <li>Captura en la columna de Actuales de la forma
+                                                        del Resumen del Plan del Proyecto, el tiempo
+                                                        total invertido en cada una de las fases del PSP0.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Tiempo</td>                               
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td></td>
+                                                <td>
+                                                    <ul>
+                                                    <li>Un Programa totalmente probado.</li>
+                                                    <li>La forma del Resumen del Plan del Proyecto
+                                                        completada.</li>
+                                                    <li>Las bitácoras de registro de tiempos y de
+                                                        defectos completadas.</li>
+                                                </ul
+                                                ></td>  
+                                                <td>Criterio del Salida</td>                               
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>   
+                        </div>
+
+                </main>
+                
+                <footer class="py-4 mt-auto ">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; GePo 2022</div>
+                            <div>
+                                <a href="#">Politica de privacidad</a>
+                                &middot;
+                                <a href="#">Terminos &amp; Condiciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
+</html>

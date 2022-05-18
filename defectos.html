@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Defectos</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/tabla.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/styleTables.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/tablas.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="js/mensaje.js"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">
+                <img src="img/GEPO.png" alt="" width="100px" height="60px">
+            </a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="index.html">Proyectos</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        
+        <!--MENU-->
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading "></div>
+                            <a class="nav-link btnhome" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <strong>MENÚ</strong>
+                            </a>
+                            <div class="sb-sidenav-menu-heading">GUÍA DEL PROCESO PSP0</div>
+                            <a class="nav-link" href="guias.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                PROCESO PSP0
+                            </a>
+                            <a class="nav-link" href="guias.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                DE PLANEACIÓN
+                            </a>
+                            <a class="nav-link" href="guias.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                DE DESARROLLO
+                            </a>
+                            <a class="nav-link" href="guias.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                POSTMORTEM
+                            </a>
+                            <a class="nav-link" href="opciones.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                OPCIONES DE REGISTRO
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sb-sidenav-footer">
+                        <img src="assets/img/user.png" width="40px" height="40px" alt="" style="float: left;">
+                        <div class="small" style="float: left;">Usuario: </div>
+                        <a href="login.html">
+                            <a href="#cerrarSesión" class="edit" data-toggle="modal">
+                            <img src="assets/img/cerrar.png" width="30px" height="30px" alt="" style="float: right;">
+                        
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <div id="cerrarSesión" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form>
+                            <div class="modal-header">						
+                                <h4 class="modal-title">Cerrar sesión</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">					
+                                <p>¿Estás seguro de cerrar la sesión?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                <a href="login.html" type="submit" class="btn btn-danger"> Cerrar
+                            </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <div class=" align-items-center row">
+                            <img class="img-fluid2" src="img/4.png" alt="">
+                        </div>
+
+                        <div class="container">
+                            <div class="table-responsive">
+                                <div id="Tabla1" class="table-wrapper">
+                                    <div class="table-title">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h2><b>BITÁCORA DE REGISTRO DE DEFECTOS</b></h2>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar registro</span></a>
+                                                <a href="#" id="btnexportar" class="btn btn-info"><i class="material-icons">&#xE24D;</i> <span>Exportar PDF</span></a>
+
+                                            </div>
+                                            <br>
+                                            <br>
+                                            <div class="col-xs-6">
+                                                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Eliminar</span></a>						
+                                                <a href="#instrucciones" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE25D;</i> <span>Instrucciones</span></a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Fecha</th>
+                                                <th>Núm.</th>
+                                                <th>Tipo</th>
+                                                <th>Intrducción</th>
+                                                <th>Removido</th>
+                                                <th>Tiempo de Reparación (Minutos)</th>
+                                                <th>Reparación de defecto</th>
+                                                <th>Descripción</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>			 
+   
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>1</td>
+                                                <td>Datos</td>
+                                                <td>Planeación</td>
+                                                <td>Codificación</td>
+                                                <td>15</td>
+                                                <td></td>
+                                                <td>La creación de la instancia de la clase del controlador no se estaba realizando correctamente, se corrijo poniendo dicha instancia en la clase principal </td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr> 
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>2</td>
+                                                <td>Sintaxis</td>
+                                                <td>Codificación</td>
+                                                <td>Compilación</td>
+                                                <td>3 </td>
+                                                <td></td>
+                                                <td>Se escribió incorrectamente la condición de if</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr> 
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>2</td>
+                                                <td>Entorno</td>
+                                                <td>Codificación </td>
+                                                <td>Compilacion</td>
+                                                <td>5</td>
+                                                <td></td>
+                                                <td>Se requería un campo más en el diseño de interfaz para mostrar algunos datos, al no encontrarlo, se desplego un error.
+                                                    Se implemento el campo y se solucionó el problema.
+                                                    </td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr> 
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>4</td>
+                                                <td>Función</td>
+                                                <td>Codificación</td>
+                                                <td>Pruebas</td>
+                                                <td>24</td>
+                                                <td></td>
+                                                <td>No se mostraba correctamente el número de las líneas de comentarios debido a una validación que se estaba haciendo incorrectamente, se corrigió el error</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr> 
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>5</td>
+                                                <td>Función</td>
+                                                <td>Planeación</td>
+                                                <td>Pruebas</td>
+                                                <td>25</td>
+                                                <td>4</td>
+                                                <td>No se mostraban correctamente el número de líneas de código, debido una mala estructura de validaciones, se corrigió el error.</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr> 
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>6</td>
+                                                <td>Función</td>
+                                                <td>Codificación</td>
+                                                <td>Pruebas</td>
+                                                <td>25</td>
+                                                <td>4</td>
+                                                <td>No realiza correctamente el conteo de comentarios ya que no toma en cuenta comentarios de varias líneas, se corrigió error.</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr> 
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>7</td>
+                                                <td>Función</td>
+                                                <td>Codificación</td>
+                                                <td>Pruebas</td>
+                                                <td>34</td>
+                                                <td>6</td>
+                                                <td>Debido a la modificación que se hizo anteriormente cambio la estructura del código y se hicieron cambios en las validaciones de los comentarios, pero ahora muestra más líneas de código, un dato erróneo. </td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr> 
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>8</td>
+                                                <td>Función</td>
+                                                <td>Planeación</td>
+                                                <td>Pruebas</td>
+                                                <td>16</td>
+                                                <td></td>
+                                                <td>No se realizaba correctamente el conteo de líneas en un archivo .java más extenso de los ya probados, se corrigió el error. </td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr> 
+                                            
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>        
+                        </div>
+
+                        <!--Modal HTML -->
+                        <div id="addEmployeeModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form action="RegistroBitacorasDefectos.php" target="" method="post" name="formBitacoraDefectos">
+                                        <div class="modal-header">						
+                                            <h4 class="modal-title">Agregar registro</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">					
+                                            <div class="form-group">
+                                                <label>Fecha</label>
+                                                <input type="date" name="DFecha" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Número</label>
+                                                <input type="number" name="DNumero" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tipo</label>
+                                                <select name="Dfase" class="form-control" required>
+                                                    <option name="Dselect" value="Selec">Seleccionar fase</option>
+                                                    <option name="DDocumentacion" value="DO">Documentación</option>
+                                                    <option name="DSintaxis" value="Sin">Sintaxis</option>
+                                                    <option name="DConstruccion" value="Cons">Construcción</option>
+                                                    <option name="DAsignacion" value="Asig">Asignación</option>
+                                                    <option name="DInterfaz" value="Inter">Interfaz</option>
+                                                    <option name="DChequeo" value="Che">Chequeo</option>
+                                                    <option name="DDatos" value="Datos">Datos</option>
+                                                    <option name="DFuncion" value="Funcion">Función</option>
+                                                    <option name="DSistemas" value="Sistemas">Sistemas</option>
+                                                    <option name="DAmbiente" value="AmbiEnto">Ambiente o entorno</option>
+                                                    <option name="DOtro" value="Otro">Otro</option>
+                                                    </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fase de introducción</label>
+                                                <select name="Dfase2" class="form-control" required>
+                                                    <option name="tSelect" value="select">Seleccionar fase</option>
+                                                    <option name="TPlaneacion" value="pl">Planeación</option>
+                                                    <option name="TDiseño" value="Di">Diseño</option>
+                                                    <option name="TCodi" value="Co">Codificación</option>
+                                                    <option name="TCompilacion" value="com">Compilación</option>
+                                                    <option name="TPruebas" value="Pru">Pruebas</option>
+                                                    </select>
+                                            </div>
+                                            <div class="form-group3">
+                                                <label>Fase removido</label>
+                                                <select name="Dfase3" class="form-control" required>
+                                                    <option name="tSelect" value="select">Seleccionar fase</option>
+                                                    <option id="TPlaneacion" value="pl">Planeación</option>
+                                                    <option id="TDiseño" value="Di">Diseño</option>
+                                                    <option id="TCodi" value="Co">Codificación</option>
+                                                    <option id="TCompilacion" value="com">Compilación</option>
+                                                    <option id="TPruebas" value="Pru">Pruebas</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tiempo de reparación</label>
+                                                <input type="number" name="DTiempoR"  class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Reparación de defecto</label>
+                                                <input type="number" name="DReparacionDe" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Descripción</label>
+                                                <input type="text" name="DDescripcion"  class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                            <button type="button" onClick="mensaje2()" class="btn btn-success" value="Agregar">Agregar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Edit Modal HTML -->
+                        <div id="editEmployeeModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form>
+                                        <div class="modal-header">						
+                                            <h4 class="modal-title">Editar registro</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">					
+                                            <div class="form-group">
+                                                <label>Fecha</label>
+                                                <input type="date" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Número</label>
+                                                <input type="number" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tipo</label>
+                                                <select name="fase" class="form-control" required>
+                                                    <option value="Selec">Seleccionar fase</option>
+                                                    <option value="pl">Documentación</option>
+                                                    <option value="Di">Sintaxis</option>
+                                                    <option value="Co">Construcción</option>
+                                                    <option value="com">Asignación</option>
+                                                    <option value="Pru">Interfaz</option>
+                                                    <option value="Pru">Chequeo</option>
+                                                    <option value="Pru">Datos</option>
+                                                    <option value="Pru">Función</option>
+                                                    <option value="Pru">Sistemas</option>
+                                                    <option value="Pru">Ambiente o entorno</option>
+                                                    <option value="Pru">Otro</option>
+                                                    </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fase de introducción</label>
+                                                <select name="fase" class="form-control" required>
+                                                    <option value="Selec">Seleccionar fase</option>
+                                                    <option value="pl">Planeación</option>
+                                                    <option value="Di">Diseño</option>
+                                                    <option value="Co">Codificación</option>
+                                                    <option value="com">Compilación</option>
+                                                    <option value="Pru">Pruebas</option>
+                                                    </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fase removido</label>
+                                                <select name="fase" class="form-control" required>
+                                                    <option value="Selec">Seleccionar fase</option>
+                                                    <option value="pl">Planeación</option>
+                                                    <option value="Di">Diseño</option>
+                                                    <option value="Co">Codificación</option>
+                                                    <option value="com">Compilación</option>
+                                                    <option value="Pru">Pruebas</option>
+                                                    </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tiempo de reparación</label>
+                                                <input type="number" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Reparación de defecto</label>
+                                                <input type="number" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Descripción</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                            <button type="button" onClick="mensaje3()" class="btn btn-success" value="Agregar">Agregar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Delete Modal HTML -->
+                        <div id="deleteEmployeeModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form>
+                                        <div class="modal-header">						
+                                            <h4 class="modal-title">Eliminar registro</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">					
+                                            <p>¿Estás seguro de borrar el registro?</p>
+                                            <p class="text-warning"><small>Esta accion no se podra deshacer</small></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                            <input type="submit" class="btn btn-danger" value="Delete">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>  
+                        <!-- instrucciones Modal HTML -->
+                        <div id="instrucciones" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form>
+                                        <div class="modal-header">						
+                                            <h4 class="modal-title">INSTRUCCIONES DE LA BITÁCORA DE REGISTRO DE TIEMPOS</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">					
+                                            <ul>
+                                                <li>
+                                                    <strong>Fecha</strong>: Captura la fecha de cuándo el defecto es encontrado.
+                                                </li>
+                                                <li>
+                                                    <strong>Número</strong>: Captura el No. de defecto. <br>
+                                                    Para cada programa, este debe ser un número secuencial <br>
+                                                    iniciando con, por ejemplo 1 o 001.
+                                                </li>
+                                                <li>
+                                                    <strong>Tipo</strong>: Captura el tipo de defecto del estándar de tipos de defectos de la <br>
+                                                    tabla C20 (también resumida de la parte superior de la bitácora). <br>
+                                                    Utiliza tu mejor juicio al seleccionar cuál tipo aplicas.
+                                                </li>
+                                                <li>
+                                                    <strong>Introducción</strong>: Captura la fase en la cual este defecto fue introducido. <br>
+                                                    Utiliza tu mejor juicio.
+                                                </li>
+                                                <li>
+                                                    <strong>Removido</strong>: Captura la fase durante la cual el defecto fue removido. <br>
+                                                    Generalmente esta fase es aquella en la que tú encontraste el
+                                                    defecto.
+                                                </li>
+                                                <li>
+                                                    <strong>Tiempo de reparación</strong>: Captura a tu mejor juicio el tiempo que te tomaste para remover el defecto. <br>
+                                                    Este tiempo puede ser determinado por parar un reloj o a juicio.
+                                                </li>
+                                                <li>
+                                                    <strong>Reparación de defecto</strong>: o Si tú introdujiste este defecto mientras reparabas otro defecto,
+                                                    registra el número del defecto reparado indirectamente. <br>
+                                                    Si tú no puedes identificar el número de defecto, captura una
+                                                    X en la cajita “Reparación de Defecto”.
+                                                </li>
+                                                <li>
+                                                    <strong>Descripción</strong>: Captura una descripción del defecto, que sea bastante clara para
+                                                    que mas tarde tú puedas recordar el error y que te ayude a
+                                                    recordar por qué lo hiciste.
+                                                </li>
+                                                
+                                                
+                                            </ul>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="submit" class="btn btn-info" value="Cerrar">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>         
+                    </div>
+                </main>
+                
+                <footer class="py-4 mt-auto ">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; GePo 2022</div>
+                            <div>
+                                <a href="#">Politica de privacidad</a>
+                                &middot;
+                                <a href="#">Terminos &amp; Condiciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
+</html>

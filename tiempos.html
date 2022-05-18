@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Tiempos</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/tabla.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/styleTables.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/tablas.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="js/mensaje.js"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">
+                <img src="img/GEPO.png" alt="" width="100px" height="60px">
+            </a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="index.html">Proyectos</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        
+        <!--MENU-->
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading "></div>
+                            <a class="nav-link btnhome" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <strong>MENÚ</strong>
+                            </a>
+                            <div class="sb-sidenav-menu-heading">GUÍA DEL PROCESO PSP0</div>
+                            <a class="nav-link" href="guias.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                PROCESO PSP0
+                            </a>
+                            <a class="nav-link" href="guias.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                DE PLANEACIÓN
+                            </a>
+                            <a class="nav-link" href="guias.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                DE DESARROLLO
+                            </a>
+                            <a class="nav-link" href="guias.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                POSTMORTEM
+                            </a>
+                            <a class="nav-link" href="opciones.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                OPCIONES DE REGISTRO
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                    <div class="sb-sidenav-footer">
+                        <img src="assets/img/user.png" width="40px" height="40px" alt="" style="float: left;">
+                        <div class="small" style="float: left;">Usuario: </div>
+                        <a href="login.html">
+                            <a href="#cerrarSesión" class="edit" data-toggle="modal">
+                            <img src="assets/img/cerrar.png" width="30px" height="30px" alt="" style="float: right;">
+                        
+                        </a>
+                    </a>
+                    </div>
+                </nav>
+            </div>
+        
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <div class=" align-items-center row">
+                            <img class="img-fluid2" src="img/3.png" alt="">
+                        </div>
+                        
+                        <div class="container">
+                            <div class="table-responsive">
+                                <div id="Tabla1" class="table-wrapper">
+                                    <div  class="table-title">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h2><b>BITÁCORA DE REGISTRO DE TIEMPOS</b></h2>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar registro</span></a>
+                                                <a href="#" id="btnexportar" class="btn btn-info"><i class="material-icons">&#xE24D;</i> <span>Exportar PDF</span></a>
+
+                                            </div>
+                                            <br>
+                                            <br>
+                                            <div class="col-xs-6">
+                                                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Eliminar</span></a>						
+                                                <a href="#instrucciones" class="btn btn-instrucciones" data-toggle="modal"><i class="material-icons">&#xE25D;</i> <span>Instrucciones</span></a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Fecha</th>
+                                                <th>Inicio</th>
+                                                <th>Paro</th>
+                                                <th>Tiempo de <br> Interrup. (Minutos)</th>
+                                                <th>Delta <br> tiempo (Minutos)</th>
+                                                <th>Fase</th>
+                                                <th>Comentarios</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>			
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>1:59pm</td>
+                                                <td>2:21pm</td>
+                                                <td>0</td>
+                                                <td>22</td>
+                                                <td>Planeación</td>
+                                                <td> Se realizó la estimacion del tiempo y se inicio planeación del programa</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>    
+                                                </td>
+                                                
+                                            </tr> 
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>2:26pm</td>
+                                                <td>3:20pm</td>
+                                                <td>4</td>
+                                                <td>50</td>
+                                                <td>Planeación</td>
+                                                <td>Se planearon idea de las clases a utilizar, recursos, y visualizar la manera de rellenado de documentos</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr> 
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>3:25pm</td>
+                                                <td>4:49pm</td>
+                                                <td>15</td>
+                                                <td>69</td>
+                                                <td>Codificación</td>
+                                                <td>Se inicio con la codificación del programa e implementar la parte del diseño</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>6:01pm</td>
+                                                <td>7:35pm</td>
+                                                <td>7</td>
+                                                <td>87</td>
+                                                <td>Codificación</td>
+                                                <td>Codificación del programa</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>27/02/2022</td>
+                                                <td>8:30pm</td>
+                                                <td>8:40pm</td>
+                                                <td>5</td>
+                                                <td>5</td>
+                                                <td>Compilación</td>
+                                                <td>Compilación de programa</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>28/02/2022</td>
+                                                <td>5:03pm</td>
+                                                <td>6:30pm</td>
+                                                <td>15</td>
+                                                <td>42</td>
+                                                <td>Prueba</td>
+                                                <td>Realización de diferentes pruebas en programa y reparación de algunos errores encontrados en conteo de líneas de código</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>29/02/2022</td>
+                                                <td>8:45pm</td>
+                                                <td>9:30pm</td>
+                                                <td>0</td>
+                                                <td>25</td>
+                                                <td>Pruebas</td>
+                                                <td>Realización de diferentes pruebas en programa y reparación de algunos errores encontrados en conteo de líneas de comentarios multilínea</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>10/03/2022</td>
+                                                <td>9:25pm</td>
+                                                <td>10:30pm</td>
+                                                <td>15</td>
+                                                <td>40</td>
+                                                <td>pruebas</td>
+                                                <td>Al realizar una prueba con un documento de java más extenso diferente, se observaron varios errores que se tuvieron que corregir</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>10/03/2022</td>
+                                                <td>4:38pm</td>
+                                                <td>6:10pm</td>
+                                                <td>7</td>
+                                                <td>90</td>
+                                                <td>Pruebas</td>
+                                                <td>Debido a las indicaciones realizadas en clase se realizó una interfaz propia y se implementó el MVC</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>10/03/2022</td>
+                                                <td>9:30pm</td>
+                                                <td>9:50pm</td>
+                                                <td>0</td>
+                                                <td>20</td>
+                                                <td>Pruebas</td>
+                                                <td>Se realizaron diferentes pruebas y todas salieron exitosas.</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                        <label for="checkbox5"></label>
+                                                    </span>
+                                                </td>
+                                                <td>10/03/2022</td>
+                                                <td>11:00pm</td>
+                                                <td>11:41pm</td>
+                                                <td>12</td>
+                                                <td>29</td>
+                                                <td>Postmortem</td>
+                                                <td>Verificación de cumplimiento de los requisitos de acuerdo a las pruebas realizadas</td>
+                                                <td>
+                                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                             
+                                             
+                                            
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>   
+                        </div>
+                        
+
+                        <!--Modal HTML -->
+                        <div id="addEmployeeModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form action="RegistroBitacoraTiempo.php" target="" method="post" name="formBitacoraTiempos">
+                                        <div class="modal-header">						
+                                            <h4 class="modal-title">Agregar registro</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">					
+                                            <div class="form-group">
+                                                <label>Fecha</label>
+                                                <input type="date" name="Tfecha" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Inicio</label>
+                                                <input type="time" name="TInicio" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Paro</label>
+                                                <input type="time" name="TParo" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tiempo de interrupción</label>
+                                                <input type="number" name="TTiempointerrupcion" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fase</label>
+                                                <select name="Tfase" class="form-control" required>
+                                                    <option name="tSelect" value="select">Seleccionar fase</option>
+                                                    <option name="TPlaneacion" value="pl">Planeación</option>
+                                                    <option name="TDiseño" value="Di">Diseño</option>
+                                                    <option name="TCodi" value="Co">Codificación</option>
+                                                    <option name="TCompilacion" value="com">Compilación</option>
+                                                    <option name="TPruebas" value="Pru">Pruebas</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Comentarios</label>
+                                                <input type="text"  name="TComentarios" class="form-control" required>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                            <button type="button" onClick="mensaje2()" class="btn btn-success" value="Agregar">Agregar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Edit Modal HTML -->
+                        <div id="editEmployeeModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form>
+                                        <div class="modal-header">						
+                                            <h4 class="modal-title">Editar registro</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">					
+                                            <div class="form-group">
+                                                <label>Fecha</label>
+                                                <input type="date" id="Tfecha" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Inicio</label>
+                                                <input type="time" id="TInicio" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Paro</label>
+                                                <input type="time" id="TParo" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tiempo de interrupción</label>
+                                                <input type="number" id="TTiempointerrupcion" class="form-control" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fase</label>
+                                                <select name="fase" class="form-control" required>
+                                                    <option id="tSelect" value="select">Seleccionar fase</option>
+                                                    <option id="TPlaneacion" value="pl">Planeación</option>
+                                                    <option id="TDiseño" value="Di">Diseño</option>
+                                                    <option id="TCodi" value="Co">Codificación</option>
+                                                    <option id="TCompilacion" value="com">Compilación</option>
+                                                    <option id="TPruebas" value="Pru">Pruebas</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Comentarios</label>
+                                                <input type="text"  id="TComntarios" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                            <button type="button" onClick="mensaje3()" class="btn btn-success" value="Agregar">Agregar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delete Modal HTML -->
+                        <div id="deleteEmployeeModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form>
+                                        <div class="modal-header">						
+                                            <h4 class="modal-title">Eliminar registro</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">					
+                                            <p>¿Estás seguro de borrar el registro?</p>
+                                            <p class="text-warning"><small>Esta accion no se podra deshacer</small></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                            <input type="submit" class="btn btn-danger" value="Delete">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- instrucciones Modal HTML -->
+                        <div id="instrucciones" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form>
+                                        <div class="modal-header">						
+                                            <h4 class="modal-title">INSTRUCCIONES DE LA BITÁCORA DE REGISTRO DE TIEMPOS</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">					
+                                            <ul>
+                                                <li>
+                                                    <strong>Fecha</strong>: Captura la fecha de cuándo es hecha la entrada.
+                                                </li>
+                                                <li>
+                                                    <strong>Inicio</strong>: Captura la hora del momento en que inicies el trabajo de la tarea.
+                                                </li>
+                                                <li>
+                                                    <strong>Paro</strong>: Captura la hora del momento en que detengas el trabajo de la tarea.
+                                                </li>
+                                                <li>
+                                                    <strong>Tiempo de Interrupción</strong> Registra el tiempo que no fue invertido en la tarea, así como
+                                                    de la razón de la interrupción. <br>
+                                                    o Si tienes varias interrupciones, captura su tiempo total.
+                                                </li>
+                                                <li>
+                                                    <strong>Delta tiempo</strong>: Captura el tiempo que invertiste trabajando en la tarea menos el
+                                                    tiempo de interrupción.
+                                                </li>
+                                                <li>
+                                                    <strong>Fase</strong>: Captura el nombre u otra designación de la fase o paso que está
+                                                    siendo realizado.
+                                                </li>
+                                                <li>
+                                                    <strong>Comentarios</strong>: Captura cualquier comentario pertinente que pueda más tarde
+                                                    recordarte cualquier circunstancia inusual al considerar esta
+                                                    actividad.
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="submit" class="btn btn-info" value="Cerrar">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+                        <div id="cerrarSesión" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form>
+                                        <div class="modal-header">						
+                                            <h4 class="modal-title">Cerrar sesión</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">					
+                                            <p>¿Estás seguro de cerrar la sesión?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                            <a href="login.html" type="submit" class="btn btn-danger"> Cerrar
+                                        </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>           
+                    </div>
+                </main>
+                
+                <footer class="py-4 mt-auto ">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; GePo 2022</div>
+                            <div>
+                                <a href="#">Politica de privacidad</a>
+                                &middot;
+                                <a href="#">Terminos &amp; Condiciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
+</html>
